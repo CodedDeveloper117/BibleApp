@@ -8,5 +8,5 @@ do:
 	git push -u upstream main
 	echo "Finished Pushing Commit-$1 at $(date)"
 
-	sleep 600
+	sleep 10m
 done
