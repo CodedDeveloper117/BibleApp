@@ -1,4 +1,4 @@
-package com.cd.sdabibleapp
+package com.cd.sdabibleapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
