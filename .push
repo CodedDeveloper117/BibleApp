@@ -7,7 +7,7 @@ do
 	echo "Pushing Commit $1 at $(date)"
 	git add .
 	git commit -m "$1"
-	git push https://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@github.com/CodedDeveloper117/BibleApp.git
+	git push git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@github.com:CodedDeveloper117/BibleApp.git
 	x=$(( $x + 1 ))
 	echo "Finished Pushing Commit-$1 at $(date) the $x time"
 
