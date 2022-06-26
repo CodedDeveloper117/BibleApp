@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Pushing Commit $1"
+git add .
+git commit -m "$1"
+git push -u upstream main
+echo "Finished Pushing Commit-$1"

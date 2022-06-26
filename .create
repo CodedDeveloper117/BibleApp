@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "# BibleApp" > README.md
+git init .
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://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@github.com/CodedDeveloper117/BibleApp.git
+git push -u origin main
