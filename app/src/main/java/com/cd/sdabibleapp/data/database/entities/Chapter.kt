@@ -9,5 +9,6 @@ data class Chapter(
     val verses: Int,
     val book: String,
     val titles: String,
-    val version: String
+    val version: String,
+    val chapter: Int
 )

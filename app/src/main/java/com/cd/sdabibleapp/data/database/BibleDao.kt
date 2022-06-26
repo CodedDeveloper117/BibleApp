@@ -9,16 +9,13 @@ import com.cd.sdabibleapp.data.database.relations.VersionWithBooks
 
 @Dao
 interface BibleDao {
+
     @Transaction
-    @Query("SELECT * FROM verse WHERE chapter = :chapter")
+    @Query("SELECT * FROM chapter WHERE chapter = :chapter")
     suspend fun getVersesWithChapter(chapter: String): List<ChaptersWithVerses>
 
     @Transaction
-    @Query("SELECT * FROM chapter WHERE book = :book")
+    @Query("SELECT * FROM book WHERE book = :book")
     suspend fun getChaptersWithBooks(book: String): List<BookWithChapters>
-
-    @Transaction
-    @Query("SELECT * FROM version WHERE title = :version")
-    suspend fun getBooksWithVersions(version: String): List<VersionWithBooks>
 
 }

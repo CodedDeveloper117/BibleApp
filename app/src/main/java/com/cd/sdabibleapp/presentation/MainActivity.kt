@@ -15,24 +15,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.cd.sdabibleapp.ui.theme.SDABibleAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 private const val TAG = "MainActivity"
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             SDABibleAppTheme {
-                val viewModel: MainViewModel = hiltViewModel()
-                val state = viewModel.state.collectAsState()
-                LaunchedEffect(key1 = true) {
-                    Log.d(TAG, "onCreate: value: ${state.value}")
-                }
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    Test()
                 }
             }
         }
@@ -40,14 +37,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    SDABibleAppTheme {
-        Greeting("Android")
+fun Test(viewModel: MainViewModel = hiltViewModel()) {
+    val state = viewModel.state.collectAsState()
+    LaunchedEffect(key1 = true) {
+        Log.d(TAG, "onCreate: value: ${state.value}")
     }
+    Text(text = state.value.toString())
 }

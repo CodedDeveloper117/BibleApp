@@ -8,10 +8,11 @@ import com.cd.sdabibleapp.domain.repositories.BibleRepository
 import com.cd.sdabibleapp.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class BibleRepositoryImpl(
+class BibleRepositoryImpl @Inject constructor(
     private val client: WebClient
 ): BibleRepository {
     override suspend fun getBibleData(): Flow<Resource<List<BookInfo>>> = flow {

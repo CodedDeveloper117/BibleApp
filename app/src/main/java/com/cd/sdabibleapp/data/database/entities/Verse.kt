@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Verse(
     @PrimaryKey(autoGenerate = false) val id: Int? = null,
     val content: String,
-    val chapter: String,
+    val chapter: Int,
     val book: String,
     val references: String = ""
 )

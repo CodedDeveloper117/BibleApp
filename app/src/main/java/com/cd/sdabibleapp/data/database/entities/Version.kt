@@ -6,5 +6,5 @@ import androidx.room.PrimaryKey
 @Entity
 data class Version(
     @PrimaryKey(autoGenerate = false)
-    val title: String
+    val version: String
 )

@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class BookResponse(
+data class BookInfoResponse(
     @SerialName("abbr")
     val abbr: String,
     val book: String,
@@ -14,6 +14,10 @@ data class BookResponse(
     val chapters: Int
 )
 
-fun BookResponse.toBookInfo() = BookInfo(
+data class BookResponse(
+    val data: List<BookInfoResponse>
+)
+
+fun BookInfoResponse.toBookInfo() = BookInfo(
     abbr, book, index, chapters
 )
