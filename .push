@@ -1,6 +1,12 @@
 #!/bin/bash
-echo "Pushing Commit $1"
-git add .
-git commit -m "$1"
-git push -u upstream main
-echo "Finished Pushing Commit-$1"
+
+while:
+do:
+	echo "Pushing Commit $1 at $(date)"
+	git add .
+	git commit -m "$1"
+	git push -u upstream main
+	echo "Finished Pushing Commit-$1 at $(date)"
+
+	sleep 600
+done

@@ -3,9 +3,9 @@ package com.cd.sdabibleapp.data.database
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
-import com.cd.sdabibleapp.domain.relations.BookWithChapters
-import com.cd.sdabibleapp.domain.relations.ChaptersWithVerses
-import com.cd.sdabibleapp.domain.relations.VersionWithBooks
+import com.cd.sdabibleapp.data.database.relations.BookWithChapters
+import com.cd.sdabibleapp.data.database.relations.ChaptersWithVerses
+import com.cd.sdabibleapp.data.database.relations.VersionWithBooks
 
 @Dao
 interface BibleDao {

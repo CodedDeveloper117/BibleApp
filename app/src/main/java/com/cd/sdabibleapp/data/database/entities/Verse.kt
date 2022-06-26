@@ -1,4 +1,4 @@
-package com.cd.sdabibleapp.domain.models
+package com.cd.sdabibleapp.data.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

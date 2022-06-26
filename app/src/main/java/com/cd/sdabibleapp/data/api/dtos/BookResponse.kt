@@ -1,4 +1,4 @@
-package com.cd.sdabibleapp.data.dtos
+package com.cd.sdabibleapp.data.api.dtos
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
