@@ -6,7 +6,7 @@ while [ $x -le 10 ]
 do
 	echo "Pushing Commit $1 at $(date)"
 	git add .
-	git commit -m "$1"
+	git commit -m "$1 at $(date)"
 	git push -u origin main
 	x=$(( $x + 1 ))
 	echo "Finished Pushing Commit-$1 at $(date) the $x time"

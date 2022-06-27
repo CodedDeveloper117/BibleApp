@@ -9,11 +9,12 @@ data class BookResponse(
     @SerialName("abbr")
     val abbr: String,
     val book: String,
-    val index: Int,
+    @SerialName("index")
+    val id: Int,
     @SerialName("noOfChapters")
-    val chapters: Int
+    val noOfChapters: Int = 0
 )
 
 fun BookResponse.toBookInfo() = BookInfo(
-    abbr, book, index, chapters
+    abbr, book, id, noOfChapters
 )
