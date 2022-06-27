@@ -1,5 +1,6 @@
 package com.cd.sdabibleapp.data.api.dtos
 
+import com.cd.sdabibleapp.data.database.entities.Book
 import com.cd.sdabibleapp.domain.models.BookInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -15,6 +16,9 @@ data class BookResponse(
     val noOfChapters: Int = 0
 )
 
-fun BookResponse.toBookInfo() = BookInfo(
-    abbr, book, id, noOfChapters
+fun BookResponse.toBook() = Book(
+    id = id,
+    book = book,
+    chapters = noOfChapters,
+    abbr = abbr
 )

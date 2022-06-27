@@ -5,5 +5,7 @@ import com.cd.sdabibleapp.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface BibleRepository {
-    suspend fun getBibleData(): Flow<Resource<List<BookInfo>>>
+    suspend fun getBibleData(): Flow<Resource<Unit>>
+
+    suspend fun loadChapterInfo(): Flow<Resource<Unit>>
 }

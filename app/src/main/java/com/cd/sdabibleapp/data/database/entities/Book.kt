@@ -9,5 +9,4 @@ data class Book (
     val book: String,
     val chapters: Int,
     val abbr: String,
-    val version: String
 )
