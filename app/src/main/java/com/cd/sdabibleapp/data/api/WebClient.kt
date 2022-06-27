@@ -2,6 +2,7 @@ package com.cd.sdabibleapp.data.api
 
 import android.util.Log
 import com.cd.sdabibleapp.data.api.dtos.BookResponse
+import com.cd.sdabibleapp.data.api.dtos.ChapterResponse
 import com.cd.sdabibleapp.data.utils.BASE_URL
 import io.ktor.client.*
 import io.ktor.client.features.*
@@ -22,6 +23,18 @@ class WebClient(
             }
             Either.Right(response)
         }catch (e: Exception) {
+            Either.Left(e.catchExceptions())
+        }
+    }
+
+    suspend fun loadChapterInfo(book: String, chapter: Int, version: String): Either<Failure, Any> {
+        return try {
+            val url = "$BASE_URL/bible/$book/$chapter/$version"
+            val response = client.request<ChapterResponse>(url) {
+                method = HttpMethod.Get
+            }
+            Either.Right(response)
+        } catch (e: Exception) {
             Either.Left(e.catchExceptions())
         }
     }
